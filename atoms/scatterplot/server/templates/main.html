@@ -1,5 +1,99 @@
-<div class="gv-submitter"><input type="text" id="gv-submitter"></input>
-    </input>
+<div id="gv-scrolly-1">
+    <div class="scroll-wrapper">
+        <div class="scroll-inner">
+            <div class="gv-arrow-y">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 5px 24.9px" width="5px" height="20px" style="enable-background:new 0 0 5 24.9;" xml:space="preserve"> <polygon points="5,4.3 2.5,0 0,4.3 2,4.3 2,24.9 3,24.9 3,4.3 "/>
+                </svg>
+
+                <span class="gv-axis-text">Change in deaths since 31 January (%)</span>
+
+            </div>
+
+            <div class="scatterplot-container">
+                <div class="gv-tooltip-container">
+                    <div class="gv-tooltip-header-container">
+                        <span class="gv-tooltip-header-country-name"></span>
+                        <span class="gv-tooltip-header-vaccines-counter"></span>
+                        <span class='average'>Daily average deaths</span>
+                    </div>
+
+
+
+                    <svg version="1.1" class="gv-svg-tooltip" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200px 90px" width="200px" height="120px">
+                        <path></path>
+
+                        <text class="date"></text>
+                        <g class="deaths">
+                            <text class='figure'></text>
+                            <!-- <text class='value'>deaths</text> -->
+                        </g>
+                        <circle></circle>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="gv-arrow-x">
+                <div class="gv-left-arrow">
+                    <span class="gv-axis-text">Vaccine doses per 100 people to date</span>
+
+                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24.9px 5px" width="24.9px" height="5px" style="enable-background:new 0 0 24.9 5;" xml:space="preserve">
+                        <polygon points="24.9,2.5 20.6,0 20.6,2 0,2 0,3 20.6,3 20.6,5 "/>
+                    </svg>
+
+                    
+                </div>
+            </div>
+        </div>
+        <div class="scroll-text">
+            <div class="scroll-text__inner">
+                <div class="scroll-text__div">
+                    <h3>Vaccines are yet to turn the tide</h3>
+                    <p>
+                        More than 900m vaccine doses have been administered around the world so far, but it is still too early to see a global trend between countries’ vaccination rates and recent changes in their death rates. Scientists say country-level data show vaccines are already reducing deaths in countries such as Israel and the UK. They are among the handful to reach the <span class='gv-target-zone'>target zone</span> of high vaccination rates and falling deaths since the beginning of 2021.
+                    </p>
+                </div>
+            </div>
+            <div class="scroll-text__inner">
+                <div class="scroll-text__div">
+                    <h3>Most countries with high vaccination rates are seeing deaths fall</h3>
+                    <p>Most countries that have managed to give at least <span class='gv-highlight'>50 vaccine doses for every 100</span> of their people are now seeing a steady decline in death rates. This includes the <b>UK</b>, where all top-priority people have now been offered a vaccine and deaths are down over 95% since January.
+                    </p>
+                </div>
+            </div>
+            <div class="scroll-text__inner">
+                <div class="scroll-text__div">
+                    <h3>But vaccinations alone are not enough</h3>
+                    <p>Even with relatively high vaccination rates, the virus can still surge if social distancing is relaxed too soon.  <span class='gv-highlight'>Chile</span> is the clearest example, where deaths attributed to the Brazilian P1 variant are growing despite an aggressive vaccination campaign.
+                    </p>
+                </div>
+            </div>
+            <div class="scroll-text__inner">
+                <div class="scroll-text__div">
+                    <h3>Developing countries are falling behind</h3>
+                    <p>Most <span class='gv-highlight'>poor or lower-middle income</span> countries are nowhere near the <span class='gv-target-zone'>target zone</span>, with all but three of these 76 countries having rates below 10 doses per 100 people. Many are experiencing a resurgence in deaths since the end of January driven by deadly new Covid-19 variants.</p>
+                </div>
+            </div>
+            <div class="scroll-text__inner">
+                <div class="scroll-text__div"> 
+                    <h3>But even wealthier countries are struggling to vaccinate their populations</h3>
+                    <p>Vaccine shortages as well as pauses due to safety concerns are slowing rollouts even in countries that have reserved enough doses to vaccinate their people several times over. <span class='gv-highlight'>Wealthy states</span> are among the many still a long way from the <span class='gv-target-zone'>target zone</span>.</p>
+                </div>
+            </div>
+            <div class="scroll-text__inner">
+                <div class="scroll-text__div">
+                    <h3>Opening up, and staying open, is a realistic hope for only a few</h3>
+                        More than 20 countries have <span class='gv-highlight'>significantly relaxed the lockdowns</span> they had in place during the surge in cases earlier in the year. Three of these – Israel, the Seychelles and the UK – have a vaccine rate of over 50 per 100 people, but the majority of those opening up still have little vaccine protection. Lockdowns have worked to reduce deaths in many of these countries, but only those in the <span class='gv-target-zone'>highly-vaccinated target zone</span> can realistically hope to break the cycle of relaxing and reinstituting social-distancing measures.
+                    </p>
+                </div>
+            </div>
+            <div class="scroll-text__inner">
+                <div class="scroll-text__div">
+                    <h3>Search for another country</h3>
+                    <Select class='gv-countries-select' label="Select a country">
+                        <Option value="">Select a country</Option>
+                    </Select>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="gv-print-container one-col"></div>
-<div class="gv-print-container two-col"></div>

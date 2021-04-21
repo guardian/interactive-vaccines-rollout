@@ -1,56 +1,328 @@
 @import "fonts";
 @import "mq";
 @import "palette";
-// @import "enhancer";
+@import "scrolly";
+@import "enhancer";
 .interactive-atom {
     // padding: 0;
     // width: 138pt;
     margin-bottom: 30px;
 }
 
-.one-col,
-.two-col {
-    padding-left: 6px;
-    padding-right: 6px;
-    // padding: 0;
-    // width: 138pt;
-    border-left: 0.3px solid black;
-    border-top: 0.3px solid black;
-}
+.scroll-wrapper{
+    margin-top: 0px;
 
-.one-col {
-    width: 138pt
-}
-
-.two-col {
-    width: 288pt
-}
-
-.headline {
-    // font-family: 'Text Egyptian Bold', monospace !important;
-    font-size: 8pt !important;
-    line-height: 9.6pt !important;
-}
-
-.axis-x-text {
-    font-size: 6pt !important;
-    line-height: 7.2pt !important;
-}
-
-.axis-y-text {
-    font-size: 6pt !important;
-    line-height: 7.2pt !important;
-}
-
-footer {
-    border-top: 0.3px solid black;
-    border-bottom: none;
-    font-size: 6pt !important;
-    line-height: 7.2pt !important;
-}
-
-@media print {
-    input {
-        display: none;
+    @include mq($from: 100px, $until: 499px) {
+        height: 450vh!important;
     }
 }
+
+.scroll-inner{
+    background: white;
+    width: 100%;
+}
+
+.scroll-text {
+
+    pointer-events: none;
+    position: absolute;
+    top: 50px;
+    pointer-events: none;
+    left: 50%;
+
+    @include mq($from: 100px, $until: 499px) {
+                z-index: -1;
+                margin-top:calc(100% + 95px);
+                left: 0;
+                width: 100%;
+    }
+}
+
+
+.scroll-text__inner{
+
+
+
+    @include mq($from: 100px, $until: 499px) {
+        height: auto;
+        margin-bottom:12px;
+    }
+
+}
+
+
+
+.scroll-text__div {
+
+    max-width: 385px;
+    //margin-left: 10px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 3px 4px 0 0 #767676;
+    box-sizing: border-box;
+    padding: 6px 10px 6px;
+
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "Guardian Headline","Guardian Egyptian Web","Guardian Headline Full",Georgia,serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.scatterplot-container{
+    margin-bottom: 12px;
+}
+
+.scatterplot-container svg {
+
+  @include mq($from: 100px, $until: 620px){
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    margin: 0 auto;
+  }
+}
+
+
+.sc-selected{fill:#C70000; stroke: #333; stroke-width: 1px; stroke-opacity:1; fill-opacity:1; transition: fill .4s ease;}
+
+.sc-unselected{fill:#929297; stroke:#fff; stroke-width:1px; transition: fill .4s ease;}
+
+
+.gv-arrow-x, .gv-arrow-y{
+    display: flex;
+}
+
+.gv-arrow-x{
+    justify-content: flex-end;
+}
+
+.gv-left-arrow{
+
+    margin-top: 8px;
+
+    display: flex;
+    align-items: center;
+
+    svg{
+        margin-right: 5px;
+    }
+
+    span{
+        margin-right: 5px;
+    }
+
+}
+
+.gv-right-arrow{
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    svg{
+        margin-left: 5px;
+    }
+}
+
+.scroll-text__div h3{
+    @include fs-header(3)
+}
+
+
+.gv-highlight{
+    background-color:#C70000 !important;
+    color: white;
+    padding-right: 4px;
+    font-weight: 800;
+}
+.gv-target-zone{
+   background-color:#22874d !important; color: #fff; padding-right: 4px;
+
+   font-weight: 800;
+
+}
+
+
+.yaxis text, .xaxis text {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Guardian Text Egyptian Web",Georgia,serif;
+    fill: #767676;
+}
+
+.yaxis line{
+    stroke-width: 2px;
+    stroke: #bababa;
+    stroke-dasharray: 0,4;
+    stroke-linecap: round;
+}
+
+.xaxis line{
+    stroke-width: 2px;
+    stroke: #bababa;
+}
+
+.xaxis .tick:last-child{
+    text{
+        text-anchor:end;
+    }
+}
+
+.yaxis .tick{
+     text-anchor:start;
+     x:0;
+
+     text{
+        y:-10px;
+     };
+}
+
+.gv-zero-line{
+    stroke: #333!important;
+    stroke-width: 2px!important;
+    stroke-dasharray: none !important;
+
+}
+
+.gv-zero-text{
+    font-weight: 900;
+}
+
+.gv-axis-text{
+    @include fs-header(1);
+
+    margin-left: 5px;
+
+    @include mq($from: 100px, $until: 620px){
+     font-size: 14px;
+  }
+}
+
+.gv-tooltip-container{
+        pointer-events: none;
+        min-width:200px;
+        height: max-content;
+        padding:8px 8px 15px 8px;
+        background: rgba(255, 255, 255, 1);
+        border: 2px solid #333;
+        color: #333333;
+        position: absolute;
+        z-index: 100000;
+        line-height: 18.2px;
+
+        opacity: 0;
+
+        &.over{
+            opacity: 1;
+        }
+
+        @include mq($from: 100px, $until: 411px) {
+            width: 100%;
+            left: -10px!important;
+        }
+
+        .gv-svg-tooltip{
+            min-height: 20px;
+        }
+}
+
+.gv-tooltip-header-container{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.gv-svg-tooltip{
+    margin-top: 12px;
+    margin-bottom: 5px;
+    background: transparent;
+
+    @include mq($from: 100px, $until: 499px) {
+            width:100%;
+    }
+}
+
+
+.gv-svg-tooltip text{
+    text-anchor: start;
+    font-size: 14px;
+}
+
+.annotation, .annotationBg{
+    @include fs-textSans(3)
+}
+
+.gv-line-chart{
+    stroke:#c70000;
+    stroke-width:2px;
+}
+
+.gv-tooltip-header-country-name{
+    @include fs-header(3);
+}
+
+.gv-tooltip-header-vaccines-counter{
+    @include fs-textSans(3);
+    //margin-bottom: 12px;
+}
+
+.gv-linechart-circle{
+    fill:#c70000;
+}
+
+.gv-svg-tooltip .deaths{
+    @include fs-textSans(3);
+    font-weight: 900;
+    text-anchor: start !important;
+}
+
+.gv-svg-tooltip .date{
+    @include fs-textSans(3);
+    text-anchor: start !important;
+}
+
+.gv-tooltip-container .average{
+    margin-top: 8px;
+    font-weight: 800;
+    @include fs-textSans(3);
+}
+
+.tooltip-furniture path, .tooltip-furniture polyline{
+    stroke-width:2px;
+}
+
+.textBg{
+    fill:none;
+    stroke:#ffffff;
+    stroke-width:4px;
+}
+
+.green-area-annotation{
+    @include fs-textSans(3);
+
+    fill:#22874d;
+
+}
+
+.green-area-annotation-bg{
+    @include fs-textSans(3);
+    fill:none;
+    stroke:#ffffff;
+    stroke-width:4px;
+}
+
+.green-area{
+    fill:#22874d;
+    opacity: .3;
+}
+
+.yaxis .domain{
+    display: none;
+}
+
+
+

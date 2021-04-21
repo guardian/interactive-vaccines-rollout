@@ -1,0 +1,261 @@
+@import "scrolly";
+@import "palette";
+
+.scroll-inner{
+	background: white;
+}
+.scroll-text__inner{
+
+
+
+	@include mq($from: 100px, $until: 499px) {
+		height: auto;
+		margin-bottom:12px;
+    }
+
+}
+
+.scroll-text {
+    position: absolute;
+    top: 40px;
+    pointer-events: none;
+    right: 15px;
+
+    @include mq($from: 100px, $until: 499px) {
+                z-index: -1;
+                margin-top:calc(100% + 30px);
+    }
+}
+
+.scroll-text__div {
+
+	max-width: 350px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #fff;
+	border: 2px solid #000;
+	box-shadow: 3px 4px 0 0 #767676;
+	box-sizing: border-box;
+	padding: 6px 10px 6px;
+
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "Guardian Headline","Guardian Egyptian Web","Guardian Headline Full",Georgia,serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.scatterplot-container svg {
+
+  @include mq($from: 100px, $until: 620px){
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    margin: 0 auto;
+  }
+}
+
+.division{fill:none; stroke-width: 2px; stroke:black; stroke-dasharray:0,4; stroke-linecap:round;}
+
+.company{fill-opacity: 0.5; stroke-width:2px; stroke-opacity:1; stroke:#bababa;}
+
+.winner{fill:#951D7A; stroke:#951D7A;}
+
+.loser{stroke:#bababa;}
+
+.over{ stroke: black; stroke-opacity:1;} 
+
+.highlight-1{background-color:#F5BE2C !important; color: white; padding-right: 4px; fill:#F5BE2C; stroke: black; stroke-width: 2px; stroke-opacity:1; fill-opacity:1;}
+.highlight-2{background-color:#FF1921 !important; color: white; padding-right: 4px; fill:#FF1921; stroke: black; stroke-width: 2px; stroke-opacity:1; fill-opacity:1;}
+.highlight-3{background-color:#91B52D !important; color: white; padding-right: 4px; fill:#91B52D; stroke: black; stroke-width: 2px; stroke-opacity:1; fill-opacity:1;}
+.highlight-4{background-color:$sport-blue !important; color: white; padding-right: 4px; fill:$sport-blue; stroke: black; stroke-width: 2px; stroke-opacity:1; fill-opacity:1;}
+.highlight-5{background-color:$inverted-blue !important; color: white; padding-right: 4px; fill:$inverted-blue; stroke: black; stroke-width: 2px; stroke-opacity:1; fill-opacity:1;}
+.highlight-6{background-color:#FFABDB !important; color: white; padding-right: 4px; fill:#FFABDB; stroke: black; stroke-width: 2px; stroke-opacity:1; fill-opacity:1;}
+.highlight-7{background-color:$neutral-86 !important; color: white; padding-right: 4px; fill:$neutral-86; stroke: black; stroke-width: 2px; stroke-opacity:1; fill-opacity:1;}
+.highlight-8{background-color:$highlight-yellow !important; color: white; padding-right: 4px; fill:$highlight-yellow; stroke: black; stroke-width: 2px; stroke-opacity:1; fill-opacity:1;}
+.highlight-9{background-color:$highlight-dark !important; color: white; padding-right: 4px; fill:$highlight-dark; stroke: black; stroke-width: 2px; stroke-opacity:1; fill-opacity:1;}
+.highlight-10{background-color:$nav-dark !important; color: white; padding-right: 4px; fill:$nav-dark; stroke: black; stroke-width: 2px; stroke-opacity:1; fill-opacity:1;}
+
+.winner-text{
+	color:white !important;
+
+	background-color: #951D7A !important;
+}
+
+
+.loser-text{
+	color: #fff !important;
+	background-color: #dadada !important;
+	  
+}
+
+.yaxis {
+
+	text{
+		font-size: 16px;
+	    line-height: 24px;
+	    font-family: "Guardian Text Egyptian Web",Georgia,serif;
+	    fill: #767676;
+
+	    @include mq($from: 100px, $until: 499px) {
+               font-size: 13px;
+    	}
+	}
+
+	line{
+		stroke: #eaeaea;
+	}
+    
+}
+
+
+.xaxis{
+	.domain{
+		color: #333;
+
+		stroke-width:2px;
+	}
+}
+
+
+
+
+.arrow-container-xaxis{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 12px;
+	max-width: calc(100% - 458px);
+	background: white;
+	padding: 6px;
+
+	@include mq($from: 100px, $until: 499px) {
+                max-width: 100%;
+                font-size: 13px;
+    }
+}
+
+.arrow-container-xaxis-left{
+	display: flex;
+
+	flex-direction: row-reverse;
+
+	align-items:center;
+
+	margin-left: 20px;
+
+	@include mq($from: 100px, $until: 499px) {
+               margin-left: 0px;
+    }
+
+	.arrow2{
+		margin-right: 2px;
+	}
+
+	p{
+		height:20px;
+		margin:0;
+	}
+
+
+}
+
+.arrow-container-xaxis-right{
+	display: flex;
+
+	flex-direction: row-reverse;
+
+	align-items:center;
+
+	.arrow{
+		margin-right: 10px;
+
+		@include mq($from: 100px, $until: 499px) {
+               margin-right: 0px;
+    	}
+		
+	}
+
+	p{
+		height:20px;
+		margin:0;
+		margin-right: 2px;
+
+	}
+}
+
+
+.line-chart{
+    stroke-width: 2px;
+    fill: none;
+}
+
+.line-winner, .line-loser{
+	fill: none;
+
+	stroke-width:3px;
+
+	stroke-linecap:round;
+}
+
+.line-winner{
+	stroke:#951D7A;
+}
+
+.line-loser{
+	stroke:#929297;
+}
+
+.dot-winner{
+	fill:#951D7A;
+	stroke:white;
+}
+
+.dot-loser{
+	fill:#929297;
+	stroke:white;
+}
+
+.tooltip-dax, .tooltip-dija, .tooltip-ftse100, .tooltip-hsi, .tooltip-nasdaq100, .tooltip-sp, .tooltip-djia{
+		pointer-events: none;
+		max-width:150px;
+		height: max-content;
+		padding:8px;
+		background: rgba(255, 255, 255, 0.9);
+		border: 1px solid #333;
+		color: #333333;
+		border-top: 1px solid #333;
+		position: absolute;
+		z-index: 100000;
+		line-height: 18.2px;
+
+		opacity: 0;
+
+		&.over{
+			opacity: 1;
+		}
+}
+
+
+.min-text, .end-text, .ini-text{
+	font-size: 12px;
+	line-height: 16px;
+	font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: normal;
+	fill: #707070;
+	color: #707070;
+	margin-bottom: 0;
+	align-self:flex-end;
+}
+
+.min-text{
+	text-anchor: middle;
+}
+
+.current-wrapper{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
